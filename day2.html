@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desafio Dia 02</title>
+</head>
+<body>
+  <script>
+    // Aqui está o seu código JavaScript
+    // Pedir para o usuário digitar seu nome
+    var nome = prompt("Qual o seu nome?");
+
+    // Pedir para o usuário digitar sua idade
+    var idade = prompt("Quantos anos você tem?");
+
+    // Pedir para o usuário digitar a linguagem de programação que está estudando
+    var linguagem = prompt("Qual linguagem de programação você está estudando?");
+
+    // Exibir a mensagem com as informações fornecidas pelo usuário
+    alert("Olá " + nome + ", você tem " + idade + " anos e já está aprendendo " + linguagem + "!");
+
+    var resposta = prompt("Você gosta de estudar " + linguagem+ "? Responda com o número 1 para SIM ou 2 para NÃO.")
+
+    if (resposta === "1") {
+      alert("Muito bom! Continue estudando e você terá muito sucesso.");
+    } else if (resposta === "2") {
+      alert("Ahh que pena... Já tentou aprender outras linguagens?");
+    } else {
+      alert("Resposta inválida. Por favor, responda com o número 1 para SIM ou 2 para NÃO.");
+    }
+
+  </script>
+</body>
+</html>
