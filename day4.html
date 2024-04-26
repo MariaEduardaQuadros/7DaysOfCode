@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desafio Dia 02</title>
+</head>
+<body>
+  <script>
+function guessNumber() {
+    // Definindo o número aleatório entre 0 e 10
+    var numero = Math.floor(Math.random() * 11);
+
+    // Número de tentativas permitidas
+    var tentativas = 3;
+
+    alert("Bem-vindo ao jogo de adivinhação! Tente adivinhar o número entre 0 e 10.");
+
+    while (tentativas > 0) {
+        var chute = parseInt(prompt("Qual é o seu chute?"));
+
+        if (chute === numero) {
+            alert("Parabéns! Você acertou!");
+            return;
+        } else {
+            tentativas--;
+            if (tentativas > 0) {
+                alert("Número errado. Tente novamente. Você tem " + tentativas + " tentativas restantes.");
+            } else {
+                alert("Suas tentativas acabaram. O número era " + numero + ".");
+            }
+        }
+    }
+}
+
+// Chamando a função principal
+guessNumber();
+  </script>
+</body>
+</html>
