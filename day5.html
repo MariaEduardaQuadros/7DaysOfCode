@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desafio Dia 02</title>
+</head>
+<body>
+  <div id="lista-compras"></div>
+
+  <script>
+    const categorias = {
+      frutas: [],
+      laticinios: [],
+      congelados: [],
+      doces: [],
+      outros: []
+    };
+
+    function adicionarAlimento() {
+      let adicionar = prompt("Deseja adicionar um alimento à lista de compras? (sim/não)").toLowerCase();
+
+      while (adicionar === "sim") {
+        let alimento = prompt("Qual alimento você deseja adicionar?");
+        let categoria = prompt("Em qual categoria esse alimento se encaixa? (frutas, laticínios, congelados, doces, outros)").toLowerCase();
+
+        if (categoria in categorias) {
+          categorias[categoria].push(alimento);
+        } else {
+          categorias.outros.push(alimento);
+        }
+
+        adicionar = prompt("Deseja adicionar mais um alimento à lista de compras? (sim/não)").toLowerCase();
+      }
+
+      const listaComprasDiv = document.getElementById("lista-compras");
+      listaComprasDiv.innerHTML = "<h2>Lista de Compras:</h2>";
+      
+      for (let categoria in categorias) {
+        if (categorias[categoria].length > 0) {
+          listaComprasDiv.innerHTML += `<p><strong>${categoria.charAt(0).toUpperCase() + categoria.slice(1)}:</strong> ${categorias[categoria].join(", ")}</p>`;
+        }
+      }
+    }
+
+    // Chamada da função
+    adicionarAlimento();
+  </script>
+</body>
+</html>
+
